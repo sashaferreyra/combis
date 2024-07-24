@@ -6,7 +6,6 @@ class recTuristico
     private $distancia;
     private $precio;
 
-
     public function inicializar($des, $dis, $pre)
     {
         $this->destino = $des;

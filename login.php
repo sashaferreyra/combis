@@ -28,47 +28,59 @@ if ($_POST) { //Si hay un $POST
     }
 }
 
-
-
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
-    <title>Login</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <title>Login</title>
 </head>
 
 <body>
     <header>
-        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand"><span class="text-info">Traslados</span>Combis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS" aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarS">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="servicios.php" class="nav-link">Servicio</a></li>
+                        <li class="nav-item"><a href="contacto.php" class="nav-link">Contacto</a></li>
+                        <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="login.php" class="nav-link">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+      <br>
+      <br>
     <main class="container">
         <div class="row">
             <div class="col-md-4">
 
             </div>
             <div class="col-md-4">
-
-                <br><br>
+                <br>
                 <div class="card">
                     <div class="card-header">
                         Login
                     </div>
                     <div class="card-body">
+                       
+                    
                         <?php if (isset($mensaje)) { ?>
                             <div class="alert alert-danger" role="alert">
                                 <strong><?php echo  $mensaje ?></strong>
                             </div>
                         <?php } ?>
 
-                        <form action="" method="post"><!--formulario para entrar al administrador-->
+                        <form action="" method="post">
                             <div class="mb-3">
                                 <label for="nombredeusuario" class="form-label">Usuario:</label>
                                 <input type="text" class="form-control" name="nombredeusuario" required id="nombredeusuario" placeholder="Escriba su usuario">
@@ -77,12 +89,11 @@ if ($_POST) { //Si hay un $POST
                                 <label for="contraseña" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" name="contraseña" required id="contraseña" placeholder="Escriba su contraseña">
                             </div>
-                            <button type="submit" class="btn btn-primary">Entrar al administrador</button>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
                             <br>
                             <br>
                         </form>
-                        <a name="" id="" class="btn btn-primary" href="index.php" role="button">Ver como usuario</a><!--Boton
-                    para dirigirse a la pagina principal-->
+                        <a name="" id="" class="btn btn-primary" href="index.php" role="button">Volver a Inicio</a>
 
 
                     </div>
@@ -92,13 +103,13 @@ if ($_POST) { //Si hay un $POST
         </div>
 
     </main>
+    
     <footer>
-        <!-- place footer here -->
+    <p> <h4>&copy; 2024 TrasladosCombis. Todos los derechos reservados.</h4></p>
     </footer>
-    <!-- Bootstrap JavaScript Libraries -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 </body>

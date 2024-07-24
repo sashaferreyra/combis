@@ -1,6 +1,6 @@
 <?php include("../../configuracion/bd.php"); ?>
-
 <?php include("../../templates/cabecera.php"); ?>
+
 <br>
 <div class="card">
     <div class="card-header">

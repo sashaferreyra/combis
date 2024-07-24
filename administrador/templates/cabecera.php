@@ -14,11 +14,9 @@ if (!isset($_SESSION['usuario'])) {
 
 <head>
     <title>Title</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -36,30 +34,27 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
     <header>
-        <!-- place navbar here -->
+       
     </header>
     <nav class="navbar navbar-expand navbar-light bg-light">
         <ul class="nav navbar-nav">
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base; ?>administrador/secciones/combis/">Combis</a>
-            </li><!-- LINK PARA IR A SECCION COMBIS -->
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base; ?>administrador/secciones/usuarios/">Usuarios</a>
-            </li><!-- LINK PARA IR A SECCION USUARIOS -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo $url_base; ?>administrador/secciones/recorridosfijos/">Recorridos fijos</a>
-            </li> <!-- LINK PARA IR A RECORRIDOS FIJOS -->
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base; ?>administrador/secciones/recorridosturistas/">Recorridos Turisticos</a>
-            </li> <!-- LINK PARA IR AL ADMINISTRADOR DE RECORRIDOS TURISTAS-->
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base; ?>administrador/secciones/reservas/">Reservas</a>
-            </li> <!-- LINK PARA IR AL ADMINISTRADOR DE RESERVAS DE VIAJES-->
+            </li> 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base; ?>cerrar.php">Cerrar sesion</a>
-            </li> <!-- LINK PARA IR A CERRAR SESION -->
+            </li>
 
 
 

@@ -9,11 +9,11 @@
         <form action="claseCombi.php" method="post">
             <div class="mb-3">
                 <label for="Modelo" class="form-label">Modelo</label>
-                <input type="text" class="form-control" name="Modelo" id="Modelo" placeholder="Ingrese el modelo de la combi">
+                <input type="text" class="form-control" name="Modelo" id="Modelo" placeholder="Ingrese el modelo">
             </div>
             <div class="mb-3">
                 <label for="Patente" class="form-label">Patente</label>
-                <input type="text" class="form-control" name="Patente" id="Patente" aria-describedby="helpId" placeholder="Ingrese la patente de la combi">
+                <input type="text" class="form-control" name="Patente" id="Patente" aria-describedby="helpId" placeholder="Ingrese la patente">
             </div>
             <div class="mb-3">
                 <label for="capacidadCombi" class="form-label">Capacidad de la combi</label>

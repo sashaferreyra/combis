@@ -49,13 +49,9 @@ $consulta = mysqli_query($conn, $query);
 </div>
 <script>
     function borrar(id) {
-        //   alert(id);
 
         Swal.fire('Se borrarrá el registro', {
-
-
-
-
+            
         }).then((result) => {
             window.location = "claseusuarios.php?txtID=" + id;
         })

@@ -1,12 +1,7 @@
 <?php
 include("./administrador/configuracion/bd.php");
 
-// Función para calcular el monto del pago 
-function calcularMontoReserva($cantidadPasajeros) {
-    // Lógica para calcular el monto del pago, por ejemplo, precio por pasajero
-    return $cantidadPasajeros *68400 ; }
-
-if (isset($_GET['txtID'])) {
+  if (isset($_GET['txtID'])) {
     $txtID = $_GET['txtID'];
     $select  = "SELECT *, (SELECT capacidad_combi 
                 FROM combis 
@@ -15,13 +10,11 @@ if (isset($_GET['txtID'])) {
                 WHERE id = '$txtID'";
     $consulta = mysqli_query($conn, $select);
     $lectura = mysqli_fetch_array($consulta);
-}
-if (!$consulta) {
+   }
+ if (!$consulta) {
     die("Error en la consulta: " . mysqli_error($conn));
-}
+ }
 
-?>
-<?php
 if ($_POST) {
     $cantidaddepasajeros = $_POST['cantidaddepasajeros'];
     $nombrecompleto = $_POST['nombrecompleto'];
@@ -47,9 +40,6 @@ if ($_POST) {
 
         $idReservaInsertada = mysqli_insert_id($conn);
 
-        // Calcular el monto del pago 
-        $montoPago = calcularMontoReserva($cantidaddepasajeros);
-
         // Generar un id_pago único para cada reserva
         $idPagoUnico = uniqid();
         $insertarPago = "INSERT INTO pagos (id_reserva, monto, metodo_pago) VALUES ('$idReservaInsertada', '$montoPago', 'PayPal')";
@@ -60,15 +50,11 @@ if ($ejecutarPago) {
     header("Location: pagos.php?txtID=".$txtID);
     exit();
 } else {
-    // Manejo de error si la consulta no se ejecuta correctamente
     echo "Error al ejecutar la consulta: " . mysqli_error($conn);
 }
-    }
-    
+    }   
 }
 ?>
-
-
 
 
 <!doctype html>
@@ -76,20 +62,35 @@ if ($ejecutarPago) {
 
     <head>
         <title>Reserva</title>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
     </head>
 
     <body>
-
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand"><span class="text-info">Traslados</span>Combis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS" aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarS">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="servicios.php" class="nav-link">Servicio</a></li>
+                        <li class="nav-item"><a href="contacto.php" class="nav-link">Contacto</a></li>
+                        <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="login.php" class="nav-link">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+      <br>
+      <br>
         <main class="container">
-
-            <div class="card">
+                <div class="card">
                 <div class="card-header">
                     <h1>Reservas</h1>
                 </div>
@@ -174,9 +175,9 @@ if ($ejecutarPago) {
 
         </main>
         <footer>
-            <!-- place footer here -->
+        <p> <h4>&copy; 2024 TrasladosCombis. Todos los derechos reservados.</h4></p>
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+      
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
         </script>
 

@@ -24,11 +24,11 @@ if (isset($_GET['txtID'])) {
                 <input type="text" value="<?php echo $txtID; ?>" class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID">
             </div>
             <div class="mb-3">
-                <label for="ModeloMod" class="form-label">Modelo de la combi</label>
+                <label for="ModeloMod" class="form-label">Modelo</label>
                 <input type="text" value="<?php echo $lectura['modelo_combi']; ?>" class="form-control" name="ModeloMod" id="ModeloMod" aria-describedby="helpId" placeholder="Ingresa el modelo de la combi">
             </div>
             <div class="mb-3">
-                <label for="PatenteMod" class="form-label">Patente de la combi</label>
+                <label for="PatenteMod" class="form-label">Patente</label>
                 <input type="text" value="<?php echo $lectura['patente_combi']; ?>" class="form-control" name="PatenteMod" id="PatenteMod" aria-describedby="helpId" placeholder="Ingrese la patente de la combi">
             </div>
             <div class="mb-3">

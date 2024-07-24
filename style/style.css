@@ -77,7 +77,7 @@ p {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    align-items: center;
 }
 
 #nav ul {
@@ -93,5 +93,5 @@ p {
 
 a {
     color: black;
-    text-decoration: none; /* Evita el subrayado predeterminado de los enlaces */
+    text-decoration: none; 
 }

@@ -8,8 +8,8 @@
     <title>Blog</title>
 </head>
 <body>
-    <main class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a href="#" class="navbar-brand"> <span class="text-info">Traslados</span>Combis </a>
 
@@ -24,11 +24,15 @@
                       <a href="servicios.php" class="nav-link"> Servicio</a>
                       <a href="contacto.php" class="nav-link"> Contacto</a>
                       <a href="blog.php" class="nav-link"> Blog</a>
+                      <a href="login.php" class="nav-link">Iniciar sesion</a>
                     </ul>
                 </div>
 
             </div>
         </nav>
+  </header>
+    <main class="container">
+       
         <section id="blog" class="py-5">
             <div class="container">
               <br>

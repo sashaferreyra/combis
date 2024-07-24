@@ -1,11 +1,9 @@
 <?php
 class Combi
 {
-
     private $patente;
     private $modelo;
     private $asientosDisponibles;
-
 
     public function inicializar($patente, $modelo, $asientosDisponibles)
     {
@@ -49,16 +47,6 @@ class Combi
             header("Location: index.php");
         }
     }
-    // Método para verificar si la combi funciona
-    /*public function funciona ($estado) 
-  {
-    $this->estaFuncionando = $estado;
-    if ($estado) {
-        return "La combi está funcionando correctamente.";
-    } else {
-        return "La combi no está funcionando. Necesita reparaciones.";
-    }
-}*/
 }
 $c1 = new Combi();
 

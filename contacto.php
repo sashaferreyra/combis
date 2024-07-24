@@ -8,7 +8,7 @@ if (isset($_POST['btnenviar'])) {
     $email = $_POST['email'];
     $mensaje = $_POST['mensaje'];
 
-    // Conectar a la base de datos (ajusta los detalles según tu configuración)
+    // Conecta a la base de datos 
     $conexion = new mysqli("localhost", "root", "", "viajes");
 
     // Verificar la conexión
@@ -20,14 +20,14 @@ if (isset($_POST['btnenviar'])) {
     $consulta = $conexion->prepare("INSERT INTO mensajes (nombre, email, mensaje) VALUES (?, ?, ?)");
     $consulta->bind_param("sss", $nombre, $email, $mensaje);
 
-    // Ejecutar la consulta
+    // Ejecuta la consulta
     if ($consulta->execute()) {
         $exito = "Mensaje enviado correctamente.";
     } else {
         $error = "Error al enviar el mensaje.";
     }
 
-    // Cerrar la conexión
+    // Cierra la conexión
     $consulta->close();
     $conexion->close();
 }
@@ -39,52 +39,39 @@ if (isset($_POST['btnenviar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-    <title>Contacto</title>
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Contacto</title>
 </head>
 
 <body>
     <header>
-        
-    </header>
-    <main class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
+        <div class="container">
+        <a href="#" class="navbar-brand"> <span class="text-info">Traslados</span>Combis </a>
 
-            <div class="container">
-                <a href="#" class="navbar-brand"> <span class="text-info">Traslados</span>Combis </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS" aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarS">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a href="index.php" class="nav-link"> Inicio</a>
+                <a href="servicios.php" class="nav-link"> Servicio</a>
+                <a href="contacto.php" class="nav-link"> Contacto</a>
+                <a href="blog.php" class="nav-link">Blog</a>
+                <a href="login.php" class="nav-link">Iniciar sesion</a>
+            </ul>
+        </div>
 
-
-
-
-
-
-
-
-
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS" aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarS">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                        <a href="index.php" class="nav-link"> Inicio</a>
-                        <a href="servicios.php" class="nav-link"> Servicio</a>
-                        <a href="contacto.php" class="nav-link"> Contacto</a>
-                        <a href="blog.php" class="nav-link">Blog</a>
-
-
-                    </ul>
-                </div>
-
-            </div>
+        </div>
         </nav>
-    <section class="contacto" id="contact">
+    </header>
+
+    <main class="container">
+        
+      <section class="contacto" id="contact">
         <form action="" method="post" id="contact-form">
-            <!-- Mensajes de éxito o error -->
             <?php
             if ($exito !== '') {
                 echo "<p style='color: green; font-weight: bold;'>$exito</p>";
